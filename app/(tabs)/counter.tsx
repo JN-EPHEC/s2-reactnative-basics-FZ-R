@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, SafeAreaView, StyleSheet, Text } from "react-native";
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function HomeScreen() {
   // Initialize state for the counter with an initial value of 0.
@@ -12,12 +12,18 @@ export default function HomeScreen() {
   }
 
   return (
-    <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>count:{count}</Text>
-      <Button title="Press Me" onPress={incrementCount} />
-    </SafeAreaView>
+    //<SafeAreaProvider>
+        <SafeAreaView style={styles.container}>
+          <Text style={styles.title}>count:{count}</Text>
+          <TouchableOpacity style={styles.button} onPress={incrementCount}>
+          <Text>Press me</Text>
+        </TouchableOpacity>
+        </SafeAreaView>
+    //</SafeAreaProvider>
   );
 }
+
+      
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +31,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#ecececff",
     alignItems: "center",
     justifyContent: "center",
-    color:"#6da977ff",
+
   },
   title: {
     fontSize: 24,
@@ -37,11 +43,11 @@ const styles = StyleSheet.create({
     fontSize: 48,
     fontWeight: "600",
     marginVertical: 20,
-    color: "#6da977ff",
+
 
   },
-  Button: {
+  button: {
     backgroundColor : "#6da977ff",
-    color: "black",
+    
   }
 });

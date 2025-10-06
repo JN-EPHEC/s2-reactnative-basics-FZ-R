@@ -8,8 +8,13 @@ const USERS_DATA = [
   { id: '4', nom: 'David Petit', email: 'david.petit@email.com' },
   { id: '5', nom: 'Émilie Rousseau', email: 'emilie.rousseau@email.com' },
 ];
+const   TodoItem =() {
 
+  <TodoItem text="Learn React Native" />
+  <TodoItem text="Build a static UI" />
+  <TodoItem text="Practice with StyleSheet" />
 
+}
 export default function HomeScreen() {
   return (
       <ScrollView>

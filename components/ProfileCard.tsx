@@ -13,10 +13,12 @@ interface ProfileCardProps {
 const ProfileCard: React.FC<ProfileCardProps> = ({name, jobTitle,imageUrl,}) => {
   return (
     <View style={styles.card}>
-
-      <Image style={styles.image} source={{uri:imageUrl}}/>
-      <Text style={styles.name}>{name}</Text>
+     <Image style={styles.image} source={{uri:imageUrl}}/>
+      <View style={styles.textContainer}>
+        <Text style={styles.name}>{name}</Text>
       <Text style={styles.jobTitle}>{jobTitle}</Text> 
+      </View> 
+      
       
     </View>
   );
