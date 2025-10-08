@@ -1,3 +1,6 @@
+import ProfileCard from "@/components/ProfileCard";
+import { TodoItem } from "@/components/ui/TodoItem";
+import React from "react";
 import { ScrollView, StyleSheet } from "react-native";
 
 const USERS_DATA = [
@@ -8,19 +11,33 @@ const USERS_DATA = [
   { id: '5', nom: 'Émilie Rousseau', email: 'emilie.rousseau@email.com' },
 ];
 
+//function Validationdetache() {
+  //return (
+    
 
 export default function HomeScreen() {
   return (
-      <ScrollView>
-        { /* Render the list of users using the UserItem component */ }
+    //
+    <ScrollView contentContainerStyle={styles.container}>
+     <TodoItem text="Learn React Native"/>
+     <TodoItem text="Build a static UI" />
+     <TodoItem text="Practice with StyleSheet" />  
+      
+
+        { <ProfileCard
+          name="Alice"
+          jobTitle="React Native Developer"
+          imageUrl="https://picsum.photos/200/300"
+        /> }
       </ScrollView>
-  );
-}
+  );}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#f5f5f5',
+    gap: 10,
+    paddingRight: 16,
   },
   title: {
     fontSize: 24,
@@ -46,4 +63,6 @@ const styles = StyleSheet.create({
     color: '#666',
     marginTop: 4,
   },
+  
+  
 });
